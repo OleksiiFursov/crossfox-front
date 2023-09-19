@@ -9,7 +9,7 @@ export type AnimatedCounterProps = {
     showArrow: boolean;
     suffix: string;
     prefix: string;
-    margin: number;
+    marginEnd: number;
     align: 'left' | 'right';
     onFinish: (data: {
         oldValue: number;

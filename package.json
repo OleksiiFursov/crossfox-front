@@ -1,0 +1,33 @@
+{
+  "name": "сrossfox-front",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@mui/material": "^5.14.10",
+    "axios": "^1.5.0",
+    "dayjs": "^1.11.9",
+    "intl": "^1.2.5",
+    "lodash-es": "^4.17.21",
+    "react": "^18.2.0",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-dom": "^18.2.0",
+    "react-highlight": "^0.15.0",
+    "react-router-dom": "^6.16.0"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@types/react": "^18.2.22",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.4",
+    "prop-types": "^15.8.1",
+    "sass": "^1.67.0",
+    "terser": "^5.19.4",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
+    "vite-plugin-minify": "^1.5.2"
+  }
+}

@@ -2,7 +2,7 @@
   "name": "@crossfox/react-animated-number",
   "author": "Oleksii Fursov",
   "description": "A lightweight JavaScript component designed for creating smooth and visually appealing animated transitions between different states or values, enhancing user experience in web applications.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "react",
     "component",
@@ -15,8 +15,7 @@
     "javascript"
   ],
   "files": [
-    "dist/**/*",
-    "src/**/*"
+    "dist/**/*"
   ],
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

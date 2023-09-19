@@ -1,6 +1,6 @@
 import {JSX} from "react";
 
-export  type AnimatedCounterProps = {
+export type AnimatedCounterProps = {
     value: number;
     duration: number;
     rate: number;
@@ -8,9 +8,10 @@ export  type AnimatedCounterProps = {
     tagName: keyof JSX.IntrinsicElements;
     className?: string;
     showArrow: boolean;
+		reserveMinusSpace: boolean;
     suffix: string;
     prefix: string;
-    margin: number;
+    marginEnd: number;
     align: 'left' | 'right';
     onFinish: (data: { oldValue: number; value: number; $el: HTMLElement }) => void;
 };

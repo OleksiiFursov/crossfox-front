@@ -1,6 +1,2 @@
-/.idea/.gitignore
-/.idea/crossfox-react.iml
-/.idea/deployment.xml
-/.idea/modules.xml
-/.idea/php.xml
-/.idea/vcs.xml
+/.idea
+/package-lock.json

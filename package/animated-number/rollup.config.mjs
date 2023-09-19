@@ -11,7 +11,7 @@ export default {
     input: "src/index.tsx",
     output: [
         {
-            file: 'dist/index.js',
+            file: 'dist/init.js',
             format: "cjs",
             exports: "named",
             sourcemap: true,

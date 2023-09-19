@@ -1,0 +1,69 @@
+body{
+	margin: 0;
+}
+#app, main, body, .page-example{
+	min-height: 100vh;
+}
+.page-example{
+	display:flex;
+	background: #f2f2f2;
+	&>div{
+		padding: 20px;
+	}
+	&>.controls{
+		background: #fff;
+		box-shadow: 2px 0 4px rgba(0,0,0, 0.1);
+		max-width: 550px;
+	}
+	&>.result{
+		flex-grow: 1;
+	}
+}
+
+.h2-wrap{
+	margin-bottom: 15px;
+}
+
+.result-item .MuiGrid-item {
+	&>div{
+		padding: 15px;
+		background: #fff;
+		font-size: 24px;
+		font-weight: bold;
+		border: 2px solid transparent;
+	}
+
+	&:nth-child(2){
+
+		.is-increment{
+			color: #32CD32;
+		}
+		.is-decrement{
+			color: #FF6B6B;
+		}
+		.is-progress{
+			border-color: orange;
+		}
+	}
+	&:nth-child(4)>div{
+		background: #222;
+		color: #fff;
+		&.is-increment{
+			background: #32CD32;
+		}
+		&.is-decrement{
+			background: #FF6B6B;
+		}
+
+	}
+	&:nth-child(3)>div{
+		background: #222;
+		color: #fff;
+		&.is-increment{
+			color: #3bee0e;
+		}
+		&.is-decrement{
+			color: red;
+		}
+	}
+}
