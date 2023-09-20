@@ -7,3 +7,7 @@
 ## Author
 
 - Oleksii Fursov [@nodePro777](https://t.me/nodePro777)
+
+## Demo:
+
+[Demo "Animated number"](https://oleksiifursov.github.io/crossfox-front/build/#/component-animated-number)

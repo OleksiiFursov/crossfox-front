@@ -67,3 +67,24 @@ body{
 		}
 	}
 }
+
+.smallLabel{
+	transform: translate(0, -1.5px) scale(0.75);
+}
+.copy{
+	position: relative;
+	cursor: copy;
+
+	&:active{
+		outline:1px solid #000;
+	}
+}
+.copy::after{
+	content: "Click for copying";
+	position: absolute;
+	right:0;
+	top:0;
+	padding: 10px;
+	color: #777;
+	font: 12px "Roboto","Helvetica","Arial",sans-serif
+}

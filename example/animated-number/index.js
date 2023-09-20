@@ -1,12 +1,9 @@
-import {
-	FormControlLabel, InputLabel, MenuItem, Select,
-	Slider,
-	Switch,
-	TextField,
-	Typography,
-} from '@mui/material'
+import { Button } from '@mui/material'
+import Input from 'components/Input/index.js'
+import Select from 'components/Input/Select.js'
 import React, { useState } from 'react'
-import AnimatedCounter from '../../package/animated-number/src/index.tsx'
+import { CopyToClipboard } from 'react-copy-to-clipboard/src'
+import AnimatedCounter from '../../package/react/animated-number/src/index.tsx'
 import H2 from 'components/H2'
 import Highlight from 'react-highlight'
 import 'highlight.js/styles/googlecode.css'
@@ -29,11 +26,26 @@ const def = {
 function AnimatedNumberPage () {
 	const [args, setArgs] = useState({ ...def })
 	const set = (key, value) => () => setArgs(prev => ({ ...prev, [key]: value }))
-	const isShowCode = key => args[key] !== def[key] ? `\n\t ${key}={${args[key]}}` : ``
+	const isShowCode = key => args[key] !== def[key] ? `\n\t ${key}={${args[key]}}` : ''
 	const setCall = (key, value) => set(key, value)()
 	const setEvent = (key, type) => e => setCall(key, type ? type(e.target.value) : e.target.value)
 
-	console.log(args)
+	let codeExample = ''
+
+	for (const key in def) {
+		let str = isShowCode(key)
+		if (str && typeof def[key] === 'string') {
+			str = '\'' + str + '\''
+		}
+		codeExample += str
+	}
+	if (codeExample) {
+		codeExample += '\n'
+	}
+	codeExample = `import React from 'react';\nimport AnimatedNumber from '@crossfox/react-animated-number';\n
+export default function PageExample(){
+  return <AnimatedNumber ${codeExample} />
+}`
 
 	return <div className="page-example">
 		<div className="controls">
@@ -41,68 +53,101 @@ function AnimatedNumberPage () {
 
 			<Grid container spacing={2}>
 				<Grid item xs={6}>
-					<TextField variant="standard"
-					           helperText="Change the number to start the animation" label="Value"
-					           value={args.value}
-					           onChange={setEvent('value', Number)}/>
+					<Input
+						helperText="Change the number to start the animation" label="Value"
+						value={args.value}
+						onChange={setEvent('value', Number)}
+					/>
 				</Grid>
 				<Grid item xs={6}>
-					<TextField variant="standard" type="number" maxLength={1} label="Round"
-					           value={args.round}
-					           onChange={setEvent('round', Number)}/>
+					<Input
+						type="number"
+						maxLength={1}
+						label="Round"
+						value={args.round}
+						onChange={setEvent('round', Number)}
+					/>
 				</Grid>
 				<Grid item xs={6}>
-					<Typography gutterBottom>
-						Duration
-					</Typography>
-					<Slider value={args.duration} min={0} max={10000}
-					        onChange={setEvent('duration')}
-					        valueLabelDisplay="auto"/>
-				</Grid>
-				<Grid item xs={6}>
-					<Typography gutterBottom>
-						Margin end
-					</Typography>
-					<Slider value={args.reserve} min={0} max={10}
-					        onChange={setEvent('reserve')}
-					        valueLabelDisplay="auto"/>
-				</Grid>
-				<Grid item xs={6}>
-					<Typography gutterBottom>
-						Rate
-					</Typography>
-					<Slider value={args.rate} min={1} max={120}
-					        onChange={setEvent('rate')}
-					        valueLabelDisplay="auto"/>
-				</Grid>
-				<Grid item xs={6}>
-					<InputLabel>Align</InputLabel>
-					<Select variant="standard" value={args.align} onChange={setEvent('align')}>
+					<Input
+						type="range"
+						value={args.duration}
+						min={0}
+						max={10000}
+						label="Duration"
+						onChange={setEvent('duration')}
+					/>
 
-						<MenuItem value="left">Left</MenuItem>
-						<MenuItem value="right">Right</MenuItem>
-					</Select>
 				</Grid>
 				<Grid item xs={6}>
-					<TextField variant="standard" label="Prefix" value={args.prefix}
-					           onChange={setEvent('prefix')}/>
+					<Input
+						type="range"
+						value={args.reserve}
+						min={0}
+						max={10}
+						label="Reserve"
+						onChange={setEvent('reserve')}
+					/>
 				</Grid>
 				<Grid item xs={6}>
-					<TextField variant="standard" label="Suffix" value={args.suffix}
-					           onChange={setEvent('suffix')}/>
+					<Input
+						type="range"
+						value={args.rate}
+						min={1}
+						max={120}
+						label="Rate"
+						onChange={setEvent('rate')}
+					/>
+				</Grid>
+				<Grid item xs={6}>
+					<Select
+						label="Align"
+						value={args.align}
+						onChange={setEvent('align')}
+						options={{
+							left: 'Left',
+							right: 'Right',
+						}}
+					/>
+				</Grid>
+				<Grid item xs={6}>
+					<Input
+						label="Prefix"
+						value={args.prefix}
+						onChange={setEvent('prefix')}
+					/>
+				</Grid>
+				<Grid item xs={6}>
+					<Input
+						label="Suffix"
+						value={args.suffix}
+						onChange={setEvent('suffix')}
+					/>
 				</Grid>
 
 				<Grid item xs={6}>
-					<FormControlLabel
-						control={<Switch onChange={(e) => setCall('showArrow', e.target.checked)}
-						                 checked={args.showArrow}/>} label="Show arrow"/>
+					<Input
+						type="switch"
+						label="Show arrow"
+						onChange={(e) => setCall('showArrow', e.target.checked)}
+						value={args.showArrow}
+					/>
+
 				</Grid>
 
 				<Grid item xs={6}>
-					<FormControlLabel
-						control={<Switch
-							onChange={(e) => setCall('reserveMinusSpace', e.target.checked)}
-							checked={args.reserveMinusSpace}/>} label="Reserve minus space"/>
+					<Input
+						type="switch"
+						label="Reserve minus space"
+						onChange={(e) => setCall('reserveMinusSpace', e.target.checked)}
+						value={args.reserveMinusSpace}
+					/>
+				</Grid>
+
+				<Grid item xs={12} sx={{textAlign: 'center', marginTop: '30px'}}>
+					<Button variant="text"
+					        href="https://www.npmjs.com/package/@crossfox/react-animated-number">Documentation
+						and install</Button>
 				</Grid>
 
 			</Grid>
@@ -129,15 +174,13 @@ function AnimatedNumberPage () {
 
 			<br/><br/>
 			<H2>JSX:</H2>
-			<Highlight language="javascript" className="javascript">
-				{`import React from 'react';\nimport AnimatedNumber from '@crossfox/react-animated-number';\n
-export default function PageExample(){
-  return <AnimatedNumber
-	 value={${args.value}}${isShowCode('round')}${isShowCode('duration')}${isShowCode('rate')}${isShowCode('prefix')}${isShowCode('suffix')}
-  />
-}
-				`}
-			</Highlight>
+			<CopyToClipboard text={codeExample}>
+				<div className="copy">
+					<Highlight language="javascript">
+						{codeExample}
+					</Highlight>
+				</div>
+			</CopyToClipboard>
 		</div>
 
 	</div>
