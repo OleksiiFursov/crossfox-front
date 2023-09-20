@@ -10,17 +10,18 @@
 
 [download-url]: https://npmjs.org/package/@crossfox/react-animated-number
 
+
 A lightweight, blazing-fast React component that's easy to use and works with React 16.8 and higher.
 
 * 📦 <1kb mini library
 * 🌟 Easy to use
 * ⚡ High performance
 
-## Demo:
+### Demo:
 
 [View demo here](https://oleksiifursov.github.io/crossfox-front/build/#/component-animated-number)
 
-## Install
+### Install
 
 ```bash
 npm install @crossfox/react-animated-number
@@ -30,11 +31,11 @@ npm install @crossfox/react-animated-number
 yarn add @crossfox/react-animated-number
 ```
 
-## Author
+### Author
 
 - Oleksii Fursov [@nodePro777](https://t.me/nodePro777)
 
-## Props
+### Props
 
 | Name                | Type       | Default Value                                      | Description                                                                                                   | Version |
 |---------------------|------------|----------------------------------------------------|---------------------------------------------------------------------------------------------------------------|---------|
@@ -52,7 +53,7 @@ yarn add @crossfox/react-animated-number
 | `tagName`           | `string`   | `div`                                              | Tag to be created for the number.                                                                             | 1.00    |
 | `onFinish`          | `function` | function(<br/>oldValue, <br/>value, <br/>$el<br/>) | Event triggers after the animation is complete. Returns the old number, current number, and the element node. | 1.00    |
 
-## ClassName status
+### ClassName status
 
 | ClassName      | Description                            |
 |----------------|----------------------------------------|
@@ -60,18 +61,20 @@ yarn add @crossfox/react-animated-number
 | `is-increment` | Notifies that the number has increased |
 | `is-decrement` | Notifies that the number has decreased | 
 
-### Example
+####
+
+## Example
 
 ```jsx
 import React, { useState } from 'react';
 import AnimatedNumber from '@crossfox/react-animated-number';
 
 const App = () => {
-  const [value, setValue] = useState(0)
-  const onClickRandom = () => setValue(Math.random() * 10000 >> 0)
-  return (<>
-    <button onClick={onClickRandom}>Random value</button>
-    <AnimatedNumber value={value}/>
-  </>)
+	const [value, setValue] = useState(0)
+	const onClickRandom = () => setValue(Math.random() * 10000 >> 0)
+	return (<>
+		<button onClick={onClickRandom}>Random value</button>
+		<AnimatedNumber value={value}/>
+	</>)
 }
 ```
