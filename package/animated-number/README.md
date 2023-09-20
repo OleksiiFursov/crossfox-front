@@ -13,6 +13,8 @@ A lightweight, blazing-fast React component that's easy to use and works with Re
 * 🌟 Easy to use
 * ⚡ High performance
 
+## Demo:
+[View demo here](https://oleksiifursov.github.io/crossfox-front/build/#/component-animated-number)
 
 ## Install
 
