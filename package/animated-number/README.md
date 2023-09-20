@@ -50,6 +50,8 @@ yarn add @crossfox/react-animated-number
 | `tagName`           | `string`   | `div`                          | Tag to be created for the number.                                                                             | 1.00    |
 | `onFinish`          | `function` | function(<br/>oldValue, <br/>value, <br/>$el<br/>) | Event triggers after the animation is complete. Returns the old number, current number, and the element node. | 1.00    |
 
+###
+
 ```jsx
 import React, { useState } from 'react';
 import AnimatedNumber from '@crossfox/react-animated-number';
