@@ -22,12 +22,13 @@
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "type": "module",
+	"homepage": "https://crossfox.online",
   "repository": {
     "type": "git",
-    "url": "https://github.com/OleksiiFursov/crossfox-react-animated-numbers.git"
+    "url": "https://github.com/OleksiiFursov/crossfox-front/tree/360d22189649f53ad37f17b07c97339b8b6fbafe/package/animated-number"
   },
   "bugs": {
-    "url": "https://github.com/OleksiiFursov/crossfox-react-animated-numbers/issues"
+    "url": "https://github.com/OleksiiFursov/crossfox-front/issues"
   },
   "scripts": {
     "build": "rollup -c",

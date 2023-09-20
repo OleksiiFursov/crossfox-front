@@ -8,7 +8,7 @@ const router = [
 		element: <Root />,
 		children: [
 			{
-				path: "component/animated-number",
+				path: "component-animated-number",
 				element: <AnimatedNumber />,
 			}
 		]
