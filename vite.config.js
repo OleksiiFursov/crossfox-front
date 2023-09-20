@@ -17,6 +17,7 @@ export default defineConfig({
     },
   },
 	base: 'https://oleksiifursov.github.io/crossfox-front/build/',
+	assetsDir: 'public',
   build: {
     outDir: 'build',
     assetsDir: 'public',
