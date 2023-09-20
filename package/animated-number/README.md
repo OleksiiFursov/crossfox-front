@@ -60,7 +60,7 @@ yarn add @crossfox/react-animated-number
 | `is-increment` | Notifies that the number has increased |
 | `is-decrement` | Notifies that the number has decreased | 
 
-###
+### Example
 
 ```jsx
 import React, { useState } from 'react';
