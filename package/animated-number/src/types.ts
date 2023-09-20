@@ -11,7 +11,7 @@ export type AnimatedCounterProps = {
 		reserveMinusSpace: boolean;
     suffix: string;
     prefix: string;
-    marginEnd: number;
+    reserve: number;
     align: 'left' | 'right';
     onFinish: (data: { oldValue: number; value: number; $el: HTMLElement }) => void;
 };

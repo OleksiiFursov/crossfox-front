@@ -21,15 +21,15 @@ export default defineConfig({
     assetsDir: 'public',
     sourcemap: true,
     minify: 'terser',
-    rollupOptions: {
-      output: {
-        manualChunks (id) {
-          if (id.includes('node_modules')) {
-            return id.toString().split('node_modules/')[1].split('/')[0].toString()
-          }
-        },
-      },
-    },
+    // rollupOptions: {
+    //   output: {
+    //     manualChunks (id) {
+    //       if (id.includes('node_modules')) {
+    //         return id.toString().split('node_modules/')[1].split('/')[0].toString()
+    //       }
+    //     },
+    //   },
+    // },
   },
   resolve: {
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],

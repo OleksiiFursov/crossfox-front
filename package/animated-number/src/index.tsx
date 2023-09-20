@@ -17,7 +17,7 @@ function AnimatedCounter(props: Partial<AnimatedCounterProps>) {
 		suffix = '',
 		prefix = '',
 		reserveMinusSpace = true,
-		marginEnd = 0,
+		reserve = 0,
 		align = 'left',
 		onFinish = () => {
 		},
@@ -30,8 +30,8 @@ function AnimatedCounter(props: Partial<AnimatedCounterProps>) {
 
 	const formatContent = (value: number, isUp?: boolean) => {
 		let content = value.toFixed(round);
-		if (marginEnd && content.length < marginEnd) {
-			const space = "\u00A0".repeat(marginEnd - content.length);
+		if (reserve && content.length < reserve) {
+			const space = "\u00A0".repeat(reserve - content.length);
 			content = align === 'left' ? content + space : space + content;
 		}
 		const arrow = isUp === undefined ? '' : (showArrow ? isUp ? '🠕' : '🠗' : '')

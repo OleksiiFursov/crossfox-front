@@ -21,7 +21,7 @@ const def = {
 	showArrow: false,
 	suffix: '',
 	prefix: '',
-	marginEnd: 0,
+	reserve: 0,
 	align: 'left',
 	reserveMinusSpace: true,
 }
@@ -63,8 +63,8 @@ function AnimatedNumberPage () {
 					<Typography gutterBottom>
 						Margin end
 					</Typography>
-					<Slider value={args.marginEnd} min={0} max={10}
-					        onChange={setEvent('marginEnd')}
+					<Slider value={args.reserve} min={0} max={10}
+					        onChange={setEvent('reserve')}
 					        valueLabelDisplay="auto"/>
 				</Grid>
 				<Grid item xs={6}>
