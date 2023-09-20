@@ -16,13 +16,14 @@ export default defineConfig({
       },
     },
   },
-	base: 'https://oleksiifursov.github.io/crossfox-front/build/',
+	base: process.env.NODE_ENV === 'production' ? 'https://oleksiifursov.github.io/crossfox-front/build/': '',
 	assetsDir: 'public',
   build: {
     outDir: 'build',
     assetsDir: 'public',
     sourcemap: true,
     minify: 'terser',
+	  chunkSizeWarningLimit: 1000000
     // rollupOptions: {
     //   output: {
     //     manualChunks (id) {
