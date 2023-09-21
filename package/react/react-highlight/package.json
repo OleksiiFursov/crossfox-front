@@ -2,7 +2,7 @@
 	"name": "@crossfox/react-animated-number",
 	"author": "Oleksii Fursov",
 	"description": "A lightweight JavaScript component designed for creating smooth and visually appealing animated transitions between different states or values, enhancing user experience in web applications.",
-	"version": "1.0.13",
+	"version": "1.0.11",
 	"license": "Apache-2.0",
 	"keywords": [
 		"react",
@@ -26,12 +26,10 @@
 	"homepage": "https://crossfox.online",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/OleksiiFursov/crossfox-front.git",
-		"directory": "package/react/animated-number"
+		"url": "https://github.com/OleksiiFursov/crossfox-front/tree/master/package/react/animated-number"
 	},
 	"bugs": {
-		"url": "https://github.com/OleksiiFursov/crossfox-front/issues",
-		"email": "nodepro777@gmail.com"
+		"url": "https://github.com/OleksiiFursov/crossfox-front/issues"
 	},
 	"scripts": {
 		"build": "rollup -c",
