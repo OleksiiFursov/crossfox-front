@@ -1,13 +1,12 @@
 import {h} from 'preact';
 import {useEffect, useRef} from 'preact/hooks';
-import { memo } from 'preact/compat';
+import {memo} from "preact/compat";
 
-import {AnimatedCounterProps} from './types';
 
 const classStatus = ['is-increment', 'is-decrement'];
-const easingFunction = (t: number) => t * t * (3 - 2 * t) * 2;
+const easingFunction = (t) => t * t * (3 - 2 * t) * 2;
 
-function AnimatedCounter(props: Partial<AnimatedCounterProps>) {
+function AnimatedCounter(props) {
 	const {
 		value = 0,
 		duration = 1000,
@@ -26,11 +25,12 @@ function AnimatedCounter(props: Partial<AnimatedCounterProps>) {
 		...rest
 	} = props;
 
-	const ref = useRef<HTMLElement>();
-	const timer = useRef<NodeJS.Timeout | null>(null)
-	const oldValue = useRef<number>(value);
 
-	const format = (value: number, isUp?: boolean) => {
+	const ref = useRef();
+	const timer = useRef(null)
+	const oldValue = useRef(value);
+
+	const format = (value, isUp) => {
 		let content = value.toFixed(round);
 		if (reserve && content.length < reserve) {
 			const space = "\u00A0".repeat(reserve - content.length);
@@ -65,7 +65,7 @@ function AnimatedCounter(props: Partial<AnimatedCounterProps>) {
 				current += step * easingFunction(i / loopCount);
 
 				if (++i >= loopCount) {
-					clearInterval(timer.current!);
+					clearInterval(timer.current);
 					timer.current = null;
 					if (currentClassApi) {
 						currentClassApi.remove('is-progress');
@@ -75,7 +75,7 @@ function AnimatedCounter(props: Partial<AnimatedCounterProps>) {
 					onFinish({
 						oldValue: oldValue.current,
 						value,
-						$el: ref.current as HTMLElement
+						$el: ref.current
 					})
 
 				}

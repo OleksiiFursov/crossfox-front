@@ -1,56 +1,37 @@
-import del from 'rollup-plugin-delete'
-import typescript from 'rollup-plugin-typescript2'
-import commonjs from '@rollup/plugin-commonjs'
-import external from 'rollup-plugin-peer-deps-external'
-import postcss from 'rollup-plugin-postcss-modules'
-import resolve from '@rollup/plugin-node-resolve'
-import analyze from 'rollup-plugin-analyzer'
-import svgr from '@svgr/rollup'
-import { terser } from 'rollup-plugin-terser'
+import typescript from "rollup-plugin-typescript2";
+import commonjs from "rollup-plugin-commonjs";
+import external from "rollup-plugin-peer-deps-external";
+import resolve from "rollup-plugin-node-resolve";
+// import scss from 'rollup-plugin-scss'
+
+
 
 export default {
-	input: 'src/index.tsx',
+	input: "src/lib/index.ts",
+	external: ['preact'],
 	output: [
 		{
-			file: 'dist/index.js',
-			format: 'cjs',
-			exports: 'named',
-			sourcemap: true,
-			compact: true,
-			generatedCode: {
-				objectShorthand: true,
-				reservedNamesAsProps: true,
-			},
+			file: 'dist/index2.js',
+			format: "cjs",
+			exports: "named",
+			sourcemap: true
 		},
 		{
-			file: 'dist/index.esm.js',
-			format: 'esm',
-			exports: 'named',
-			sourcemap: true,
-			compact: true,
-			generatedCode: {
-				objectShorthand: true,
-				reservedNamesAsProps: true,
-			},
-		},
+			file: 'dist/index3.js',
+			format: "es",
+			exports: "named",
+			sourcemap: true
+		}
 	],
 	plugins: [
-		del({ targets: 'dist/*' }),
 		external(),
-		postcss({
-			extract: true,
-			writeDefinitions: false,
-		}),
-		svgr(),
 		resolve(),
 		typescript({
+			tsconfig: "tsconfig.lib.json",
 			rollupCommonJSResolveHack: true,
-			clean: true,
+			exclude: "**/__tests__/**",
+			clean: true
 		}),
-		commonjs({ sourceMap: false }),
-		analyze({
-			summaryOnly: true,
-		}),
-		terser(),
-	],
-}
+		commonjs()
+	]
+};

@@ -4,10 +4,10 @@ import { LocationProvider, Router, Route } from 'preact-iso';
 import { Header } from './components/Header.jsx';
 import { Home } from './pages/Home/index.jsx';
 import { NotFound } from './pages/_404.jsx';
-import AnimatedNumber from '../../package/preact/animated-number/src'
+
+import AnimatedNumber from '../../package/preact/animated-number/dist/index.esm.js'
 export function App() {
 
-	console.log(AnimatedNumber);
 	return <div>
 		<AnimatedNumber value={1100}/>
 		11
