@@ -100,7 +100,6 @@ function AnimatedCounter(props: Partial<AnimatedCounterProps>) {
 		...rest,
 		dangerouslySetInnerHTML: {__html: format(oldValue.current)}
 	});
-
 }
 
 export default memo(AnimatedCounter);
