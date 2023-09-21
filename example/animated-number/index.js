@@ -26,18 +26,16 @@ const def = {
 function AnimatedNumberPage () {
 	const [args, setArgs] = useState({ ...def })
 	const set = (key, value) => () => setArgs(prev => ({ ...prev, [key]: value }))
-	const isShowCode = key => args[key] !== def[key] ? `\n\t ${key}={${args[key]}}` : ''
+	const setType = key => args[key] && typeof def[key] === 'string' ? "'"+args[key]+"'" : args[key];
+
+	const isShowCode = key => args[key] !== def[key] ? `\n\t ${key}=${setType(key)}` : ''
 	const setCall = (key, value) => set(key, value)()
 	const setEvent = (key, type) => e => setCall(key, type ? type(e.target.value) : e.target.value)
 
 	let codeExample = ''
 
 	for (const key in def) {
-		let str = isShowCode(key)
-		if (str && typeof def[key] === 'string') {
-			str = '\'' + str + '\''
-		}
-		codeExample += str
+		codeExample += isShowCode(key)
 	}
 	if (codeExample) {
 		codeExample += '\n'
