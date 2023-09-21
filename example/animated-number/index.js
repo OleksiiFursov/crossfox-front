@@ -51,15 +51,15 @@ export default function PageExample(){
 		<div className="controls">
 			<H2>Props</H2>
 
-			<Grid container spacing={2}>
-				<Grid item xs={6}>
+			<Grid container spacing={3}>
+				<Grid item md={6} xs={12}>
 					<Input
 						helperText="Change the number to start the animation" label="Value"
 						value={args.value}
 						onChange={setEvent('value', Number)}
 					/>
 				</Grid>
-				<Grid item xs={6}>
+				<Grid item md={6} xs={12}>
 					<Input
 						type="number"
 						maxLength={1}
@@ -68,7 +68,7 @@ export default function PageExample(){
 						onChange={setEvent('round', Number)}
 					/>
 				</Grid>
-				<Grid item xs={6}>
+				<Grid item md={6} xs={12}>
 					<Input
 						type="range"
 						value={args.duration}
@@ -79,7 +79,7 @@ export default function PageExample(){
 					/>
 
 				</Grid>
-				<Grid item xs={6}>
+				<Grid item md={6} xs={12}>
 					<Input
 						type="range"
 						value={args.reserve}
@@ -89,7 +89,7 @@ export default function PageExample(){
 						onChange={setEvent('reserve')}
 					/>
 				</Grid>
-				<Grid item xs={6}>
+				<Grid item md={6} xs={12}>
 					<Input
 						type="range"
 						value={args.rate}
@@ -99,7 +99,7 @@ export default function PageExample(){
 						onChange={setEvent('rate')}
 					/>
 				</Grid>
-				<Grid item xs={6}>
+				<Grid item md={6} xs={12}>
 					<Select
 						label="Align"
 						value={args.align}
@@ -110,14 +110,14 @@ export default function PageExample(){
 						}}
 					/>
 				</Grid>
-				<Grid item xs={6}>
+				<Grid item md={6} xs={12}>
 					<Input
 						label="Prefix"
 						value={args.prefix}
 						onChange={setEvent('prefix')}
 					/>
 				</Grid>
-				<Grid item xs={6}>
+				<Grid item md={6} xs={12}>
 					<Input
 						label="Suffix"
 						value={args.suffix}
@@ -125,7 +125,7 @@ export default function PageExample(){
 					/>
 				</Grid>
 
-				<Grid item xs={6}>
+				<Grid item md={6} xs={12}>
 					<Input
 						type="switch"
 						label="Show arrow"
@@ -135,7 +135,7 @@ export default function PageExample(){
 
 				</Grid>
 
-				<Grid item xs={6}>
+				<Grid item md={6} xs={12}>
 					<Input
 						type="switch"
 						label="Reserve minus space"
@@ -144,7 +144,7 @@ export default function PageExample(){
 					/>
 				</Grid>
 
-				<Grid item xs={12} sx={{textAlign: 'center', marginTop: '30px'}}>
+				<Grid item sm={12} sx={{textAlign: 'center', marginTop: '30px'}}>
 					<Button variant="text"
 					        href="https://www.npmjs.com/package/@crossfox/react-animated-number">Documentation
 						and install</Button>
@@ -157,16 +157,16 @@ export default function PageExample(){
 		<div className="result">
 			<H2>Result</H2>
 			<Grid container className="result-item" spacing={2}>
-				<Grid item xs={3}>
+				<Grid item md={3} sm={6}>
 					<AnimatedCounter {...args} />
 				</Grid>
-				<Grid item xs={3}>
+				<Grid item md={3} sm={6}>
 					<AnimatedCounter {...args} />
 				</Grid>
-				<Grid item xs={3}>
+				<Grid item md={3} sm={6}>
 					<AnimatedCounter {...args} />
 				</Grid>
-				<Grid item xs={3}>
+				<Grid item md={3} sm={6}>
 					<AnimatedCounter {...args} />
 				</Grid>
 

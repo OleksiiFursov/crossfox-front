@@ -8,6 +8,7 @@ function InputSwitch (props) {
 		<FormControlLabel
 			label={label}
 			control={<Switch
+				fullWidth
 				checked={value || checked}
 				{...rest}
 			/>}

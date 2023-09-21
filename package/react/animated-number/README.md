@@ -1,8 +1,8 @@
 # React animated number by CrossFox
 
-[![npm version](https://badge.fury.io/js/crossfox-react-animated-number.svg)](https://www.npmjs.com/package/@crossfox/react-animated-number)
+[![npm version](https://badge.fury.io/js/@crossfox%2Freact-animated-number.svg)](https://www.npmjs.com/package/@crossfox/react-animated-number)
 [![Blazing Fast](https://badgen.now.sh/badge/speed/blazing%20%F0%9F%94%A5/green)](@crossfox/react-animated-number)
-[![gzip size](http://img.badgesize.io/https://unpkg.com/@crossfox/react-animated-number/dist/index.js?compression=gzip)](https://unpkg.com/formik@latest/dist/formik.esm.js)
+[![gzip size](http://img.badgesize.io/https://unpkg.com/@crossfox/react-animated-number/dist/index.js?compression=gzip)](https://unpkg.com/@crossfox/react-animated-number/dist/index.js)
 [![NPM downloads][download-image]][download-url]
 ![license](https://badgen.now.sh/badge/license/Apache-2.0)
 
@@ -16,6 +16,7 @@ A lightweight, blazing-fast React component that's easy to use and works with Re
 * 📦 <1kb mini library
 * 🌟 Easy to use
 * ⚡ High performance
+* 🔗 No dependency
 
 ### Demo:
 

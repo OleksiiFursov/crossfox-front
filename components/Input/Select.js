@@ -7,7 +7,7 @@ function InputSelect (props) {
 	return (
 		<>
 			<InputLabel className="smallLabel">{label}</InputLabel>
-			<Select variant="standard" {...rest}>
+			<Select fullWidth variant="standard" {...rest}>
 				{Object.entries(options).map(([key, value]) => (
 					<MenuItem key={key} value={key}>{value}</MenuItem>
 				))}

@@ -4,7 +4,7 @@ import { TextField } from '@mui/material'
 function InputText (props) {
 
 	return (
-		<TextField variant="standard" {...props}/>
+		<TextField fullWidth variant="standard" {...props}/>
 	)
 }
 
