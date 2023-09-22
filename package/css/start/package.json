@@ -1,0 +1,37 @@
+{
+	"name": "@crossfox/css-start",
+	"author": "Oleksii Fursov",
+	"description": "A lightweight CSS library designed to address common rendering issues in various web browsers. This package provides a set of styles and normalization rules to help prevent incorrect rendering of web elements in both older and modern web browsers.",
+	"version": "1.0.0",
+	"license": "Apache-2.0",
+	"keywords": [
+		"сss",
+		"css-reset",
+		"css-normalize",
+		"normalize",
+		"css-start",
+		"html5",
+		"start",
+		"crossfox",
+		"tiny",
+		"front-end"
+	],
+	"files": [
+		"dist/**/*"
+	],
+	"main": "dist/index.min.css",
+	"style": "dist/index.min.css",
+	"homepage": "https://crossfox.online",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/OleksiiFursov/crossfox-front.git",
+		"directory": "package/css/start"
+	},
+	"bugs": {
+		"url": "https://github.com/OleksiiFursov/crossfox-front/issues",
+		"email": "nodepro777@gmail.com"
+	},
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	}
+}

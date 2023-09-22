@@ -10,20 +10,11 @@ import 'highlight.js/styles/googlecode.css'
 import Grid from '@mui/material/Grid'
 
 const def = {
-	value: 1000,
-	duration: 1000,
-	rate: 60,
-	round: 0,
-	tagName: 'div',
-	showArrow: false,
-	suffix: '',
-	prefix: '',
-	reserve: 0,
-	align: 'left',
-	reserveMinusSpace: true,
+	language: 'javascript'
+
 }
 
-function AnimatedNumberPage () {
+function HighlightPage () {
 	const [args, setArgs] = useState({ ...def })
 	const set = (key, value) => () => setArgs(prev => ({ ...prev, [key]: value }))
 	const isShowCode = key => args[key] !== def[key] ? `\n\t ${key}={${args[key]}}` : ''
@@ -42,9 +33,9 @@ function AnimatedNumberPage () {
 	if (codeExample) {
 		codeExample += '\n'
 	}
-	codeExample = `import React from 'react';\nimport AnimatedNumber from '@crossfox/react-animated-number';\n
+	codeExample = `import React from 'react';\nimport Highlight from '@crossfox/react-highlight';\n
 export default function PageExample(){
-  return <AnimatedNumber ${codeExample} />
+  return <Highlight ${codeExample} />
 }`
 
 	return <div className="page-example">
@@ -186,4 +177,4 @@ export default function PageExample(){
 	</div>
 }
 
-export default AnimatedNumberPage
+export default HighlightPage

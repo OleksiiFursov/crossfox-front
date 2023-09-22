@@ -1,0 +1,16 @@
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+
+hr{
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible;
+}
+
+abbr[title] {
+	border-bottom: none;
+	text-decoration: underline;
+	text-decoration: underline dotted;
+}

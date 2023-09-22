@@ -1,0 +1,73 @@
+@import "fixed";
+
+*, ::before, ::after {
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	vertical-align: baseline;
+}
+
+*:focus, *:active {
+	outline: none !important;
+}
+
+.hidden, template, *[hidden] {
+	display: none !important;
+}
+
+
+/* Remove spacing: */
+body, h1, h2, h3, h4, h5, h6, p, blockquote, ul, ol {
+	margin: 0;
+	font: inherit;
+}
+
+html {
+	-ms-overflow-style: none;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	min-height: 100vh;
+	min-height: -webkit-fill-available;
+	text-rendering: optimizeLegibility;
+	text-decoration-skip: objects;
+	-webkit-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: transparent;
+	scroll-behavior: smooth;
+	-webkit-text-size-adjust: 100%;
+
+}
+
+ul, ol {
+	list-style-type: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+	color: inherit;
+	font: inherit;
+	background-color: transparent;
+	text-decoration: none;
+	cursor: pointer;
+	display: inline-block;
+}
+
+textarea {
+	overflow: auto;
+}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+
+@import "forms";

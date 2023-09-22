@@ -1,0 +1,42 @@
+input, textarea {
+	font-family: inherit;
+	color: inherit;
+	box-sizing: border-box;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+button, input {
+	font:inherit;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	&:focus, &:active {
+		outline: none !important;
+		box-shadow: none !important;
+	}
+}
+
+button{
+	cursor: pointer;
+}
+
+[type="search"] {
+	-webkit-appearance: textfield;
+	outline-offset: -2px;
+	&::-webkit-search-decoration {
+		-webkit-appearance: none;
+	}
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit;
+}

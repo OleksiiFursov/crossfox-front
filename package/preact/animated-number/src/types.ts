@@ -1,9 +1,10 @@
+import {JSX} from 'preact';
 export type AnimatedCounterProps = {
     value: number;
     duration: number;
     rate: number;
     round: number;
-    tagName:any;
+    tagName: keyof JSX.IntrinsicElements;
     className?: string;
     showArrow: boolean;
 		reserveMinusSpace: boolean;
