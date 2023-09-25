@@ -19,8 +19,8 @@
 	"files": [
 		"dist/**/*"
 	],
-	"main": "dist/index.min.css",
-	"style": "dist/index.min.css",
+	"main": "dist/base.min.css",
+	"style": "dist/base.min.css",
 	"homepage": "https://crossfox.online",
 	"repository": {
 		"type": "git",
@@ -30,6 +30,9 @@
 	"bugs": {
 		"url": "https://github.com/OleksiiFursov/crossfox-front/issues",
 		"email": "nodepro777@gmail.com"
+	},
+	"scripts": {
+		"build": "sass --watch src/base.scss:dist/base.min.css --style compressed"
 	},
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org/"

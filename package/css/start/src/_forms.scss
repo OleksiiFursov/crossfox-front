@@ -23,6 +23,10 @@ button{
 	cursor: pointer;
 }
 
+label {
+	cursor: pointer;
+}
+
 [type="search"] {
 	-webkit-appearance: textfield;
 	outline-offset: -2px;
@@ -40,3 +44,4 @@ button{
 	-webkit-appearance: button;
 	font: inherit;
 }
+

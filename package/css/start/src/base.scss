@@ -16,18 +16,25 @@
 
 
 /* Remove spacing: */
-body, h1, h2, h3, h4, h5, h6, p, blockquote, ul, ol {
+body, h1, h2, h3, h4, h5, h6, p, dl, dd, blockquote, ul, ol, figure {
 	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, cite, address{
 	font: inherit;
 }
 
+h1, h2, h3, h4, h5, h6, p{
+	overflow-wrap: break-word;
+}
 html {
 	-ms-overflow-style: none;
+	font-size: 10px;
 }
-
 body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font: 160% -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 	min-height: 100vh;
+	line-height: 1.5;
 	min-height: -webkit-fill-available;
 	text-rendering: optimizeLegibility;
 	text-decoration-skip: objects;
@@ -35,11 +42,11 @@ body {
 	-webkit-tap-highlight-color: transparent;
 	scroll-behavior: smooth;
 	-webkit-text-size-adjust: 100%;
-
 }
 
 ul, ol {
 	list-style-type: none;
+	padding: 0;
 }
 
 table {
@@ -51,9 +58,11 @@ a {
 	color: inherit;
 	font: inherit;
 	background-color: transparent;
-	text-decoration: none;
 	cursor: pointer;
 	display: inline-block;
+}
+a, a:link, a:visited  {
+	text-decoration: none;
 }
 
 textarea {
@@ -69,5 +78,28 @@ q:before, q:after {
 	content: none;
 }
 
+img, picture, video, canvas, svg {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+}
 
+#root, #__next {
+	isolation: isolate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
 @import "forms";

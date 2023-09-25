@@ -1,5 +1,5 @@
 import React, { createElement } from 'react'
-import '../../package/css/start/src/index.scss';
+import 'package/css/start/src/base.scss';
 
 const tags = ['h1','h2','h3','h4','h5','h6','p'];
 function CssStart(){
@@ -81,6 +81,9 @@ function CssStart(){
 			</tfoot>
 
 		</table>
+		<a href="#">Test</a>
+		<a href="https://google.com">Google.com</a>
+		<address>Tag address</address>
 
 
 	</>)
