@@ -24,7 +24,7 @@
 	"homepage": "https://crossfox.online",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/OleksiiFursov/crossfox-front.git#package/css/start",
+		"url": "https://github.com/OleksiiFursov/crossfox-front.git#package/css/start"
 	},
 	"bugs": {
 		"url": "https://github.com/OleksiiFursov/crossfox-front/issues",
