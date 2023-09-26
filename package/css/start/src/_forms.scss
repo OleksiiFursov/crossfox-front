@@ -1,31 +1,20 @@
 input, textarea {
-	font-family: inherit;
 	color: inherit;
-	box-sizing: border-box;
-
-	&:focus {
-		outline: none;
-	}
 }
 
 button, input {
-	font:inherit;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 	&:focus, &:active {
-		outline: none !important;
 		box-shadow: none !important;
 	}
 }
 
-button{
+button,label{
 	cursor: pointer;
 }
 
-label {
-	cursor: pointer;
-}
 
 [type="search"] {
 	-webkit-appearance: textfield;
