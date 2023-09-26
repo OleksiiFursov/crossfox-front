@@ -17,8 +17,7 @@ inconsistencies and ensuring a more predictable layout and design across various
 * 💪 Cross-browser
 * 🌟 Removing unnecessary styles 
 * 🧮 Normalize css styles
-
-
+###
 ### Includes
 
 1. **Support HTML5 (for ~5% of old browsers):**
