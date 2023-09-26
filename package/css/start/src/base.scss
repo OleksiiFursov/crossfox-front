@@ -20,7 +20,7 @@ body, h1, h2, h3, h4, h5, h6, p, dl, dd, blockquote, ul, ol, figure {
 	margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6, p, cite, address, input, textarea, button, font{
+h1, h2, h3, h4, h5, h6, p, cite, address, input, textarea, button, font,a{
 	font: inherit;
 }
 
@@ -56,11 +56,11 @@ table {
 
 a {
 	color: inherit;
-	font: inherit;
 	background-color: transparent;
 	cursor: pointer;
 	display: inline-block;
 }
+
 a, a:link, a:visited  {
 	text-decoration: none;
 }
@@ -71,11 +71,10 @@ textarea {
 
 blockquote, q {
 	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+	&::before, &::after{
+		content: '';
+		content: none;
+	}
 }
 
 img, picture, video, canvas, svg {
