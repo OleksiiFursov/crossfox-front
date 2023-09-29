@@ -2,7 +2,7 @@
 	"name": "@crossfox/css-start",
 	"author": "Oleksii Fursov",
 	"description": "A lightweight CSS library designed to address common rendering issues in various web browsers. This package provides a set of styles and normalization rules to help prevent incorrect rendering of web elements in both older and modern web browsers.",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"license": "Apache-2.0",
 	"keywords": [
 		"сss",
@@ -31,7 +31,8 @@
 		"email": "nodepro777@gmail.com"
 	},
 	"scripts": {
-		"build": "sass --watch src/base.scss:dist/base.min.css --style compressed"
+		"build": "sass --watch src/base.scss:dist/base.min.css --style compressed",
+		"prepublish": "npm version patch && npm publish"
 	},
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org/"
