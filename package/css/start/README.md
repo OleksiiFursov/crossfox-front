@@ -122,8 +122,6 @@ Alternatively, if you need to download the files directly, you can do so via the
 
 	 In addition, there are some minor rules for the correct or improved display of the page
 
-🔗 Links
-
 
 ## Author
 
