@@ -156,7 +156,7 @@ checkType('validate', 'stringValue', stringValue, 'string');
 const numbersInRange = range(1, 5); // [1, 2, 3, 4, 5]
 
 // Example of using the parseJSON function
-const jsonString = '{"name": "Alice", "age": 25}';
+const jsonString = '{"name": "Karina", "age": 26}';
 const parsedObject = parseJSON(jsonString); 
 
 // Example of using the maskValue function
