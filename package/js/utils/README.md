@@ -21,103 +21,79 @@ The `@crossfox/utils` package is a collection of useful utilities and functions 
 ### Install
 
 ```bash
-npm install @crossfox/react-animated-number
+npm install @crossfox/utils
 ```
 
 ```bash
-yarn add @crossfox/react-animated-number
+yarn add @crossfox/utils
 ```
-
 ## Functions and Utilities
 
-### `takeItem(arr: Record<string, any>, column: string, def = null): any`
+### Object
 
-The `takeItem` function is used to retrieve a value from an object and optionally remove it.
+- `isEmpty(value: any): boolean`
 
-- `arr`: The source object.
-- `column`: The key to retrieve the value.
-- `def` (default `null`): The default value to return if the key is missing.
-- Returns the extracted value or the default value if the key is missing.
+	The `isEmpty` function checks if a value is empty (null, undefined, empty string, or empty array).
 
-### `crop(obj: Record<string, any>, keys: string[], isDelete = false): Record<string, any>`
+	- `value`: The value to check.
 
-The `crop` function creates a new object containing the specified keys from the source object, with an option to delete the keys from the source object.
+	**Returns:** `true` if the value is empty, `false` otherwise.
 
-- `obj`: The source object.
-- `keys`: An array of keys to extract.
-- `isDelete` (default `false`): An option to delete the keys from the source object.
-- Returns a new object with the selected keys.
+- `crop(obj: Record<string, any>, keys: string[], isDelete = false): Record<string, any>`
 
-### `setObject(obj: Record<string, any>): (...args: any[]) => Record<string, any>`
+	The `crop` function creates a new object containing the specified keys from the source object, with an option to delete the keys from the source object.
 
-The `setObject` function dynamically sets keys and values in an object using a variadic function.
+	- `obj`: The source object.
+	- `keys`: An array of keys to extract.
+	- `isDelete` (default `false`): An option to delete the keys from the source object.
 
-- `obj`: The source object.
-- Returns a function that accepts key-value pairs to add to the object and returns the updated object.
+	**Returns** a new object with the selected keys.
 
-### `isEmpty(v: any): boolean`
+- `setObject(obj: Record<string, any>): (...args: any[]) => Record<string, any>`
 
-The `isEmpty` function checks if a value is empty (null, undefined, empty string, or empty array).
+	The `setObject` function dynamically sets keys and values in an object using a variadic function.
 
-- `v`: The value to check.
-- Returns `true` if the value is empty, `false` otherwise.
+	- `obj`: The source object.
 
-### `isString(v: any): boolean`
+	Returns a function that accepts key-value pairs to add to the object and returns the updated object.
 
-The `isString` function checks if a value is a string.
+- `takeItem(arr: Record<string, any>, column: string, def = null): any`
 
-- `v`: The value to check.
-- Returns `true` if the value is a string, `false` otherwise.
+	The `takeItem` function is used to retrieve a value from an object and optionally remove it.
 
-### `isNull(v: any): boolean`
+	- `arr`: The source object.
+	- `column`: The key to retrieve the value.
+	- `def` (default `null`): The default value to return if the key is missing.
 
-The `isNull` function checks if a value is null.
+	Returns the extracted value or the default value if the key is missing.
 
-- `v`: The value to check.
-- Returns `true` if the value is null, `false` otherwise.
+### Types
 
-### `isBoolean(v: any): boolean`
+- `isString(value: any): boolean`
 
-The `isBoolean` function checks if a value is a boolean (true or false).
+	The `isString` function checks if a value is a string.
 
-- `v`: The value to check.
-- Returns `true` if the value is a boolean, `false` otherwise.
+	- `value`: The value to check.
 
-### `checkType(prefix: string, name: string, value: any, type: (() => void) | string): void`
+	Returns `true` if the value is a string, `false` otherwise.
 
-The `checkType` function validates the type of a value and compares it to the specified type or a custom validation function.
+- `isNull(value: any): boolean`
 
-- `prefix`: The prefix for error messages.
-- `name`: The name of the value.
-- `value`: The value to check.
-- `type`: The type to compare (string or function).
-- Throws a `TypeError` exception if the type does not match the expected type.
+	The `isNull` function checks if a value is null.
 
-### `range(min: number, max: number, step: number | null): number[]`
+	- `value`: The value to check.
 
-The `range` function generates an array of numbers within a specified range.
+	Returns `true` if the value is null, `false` otherwise.
 
-- `min`: The lower limit of the range.
-- `max`: The upper limit of the range.
-- `step` (default `null`): The step for generating numbers. If not specified, a step of 1 is used.
-- Returns an array of numbers within the specified range.
+- `isBoolean(value: any): boolean`
 
-### `parseJSON(str: string, def = {}): Record<string, any>`
+	The `isBoolean` function checks if a value is a boolean (true or false).
 
-The `parseJSON` function parses a JSON string and returns a JavaScript object with error handling.
+	- `value`: The value to check.
 
-- `str`: The JSON string to parse.
-- `def` (default `{}`): The default value to return in case of parsing errors.
-- Returns the parsed object or the default value in case of errors.
+	Returns `true` if the value is a boolean, `false` otherwise.
 
-### `maskValue(v: string, mask: string, clearExp = /\s+|[^0-9]+/g): string`
-
-The `maskValue` function applies a mask to a string value, formatting it according to the provided mask.
-
-- `v`: The string value.
-- `mask`: The mask for formatting.
-- `clearExp` (default `/\s+|[^0-9]+/g`): A regular expression for clearing the string of unnecessary characters.
-- Returns the formatted string.
+- `checkType(prefix: string, name: string, value: any, type: (() =>
 
 
 ### Author
