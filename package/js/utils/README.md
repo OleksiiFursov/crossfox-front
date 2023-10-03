@@ -18,7 +18,7 @@ The `@crossfox/utils` package is a collection of useful utilities and functions 
 * 🔗 No dependency
 
 
-### Install
+## Install
 
 ```bash
 npm install @crossfox/utils
@@ -30,8 +30,7 @@ yarn add @crossfox/utils
 ## Functions and Utilities
 
 ### Object
-
-- `isEmpty(value: any): boolean`
+- **isEmpty(value: any): boolean**
 
 	The `isEmpty` function checks if a value is empty (null, undefined, empty string, or empty array).
 
@@ -39,7 +38,8 @@ yarn add @crossfox/utils
 
 	**Returns:** `true` if the value is empty, `false` otherwise.
 
-- `crop(obj: Record<string, any>, keys: string[], isDelete = false): Record<string, any>`
+
+- **crop(obj: Record<string, any>, keys: string[], isDelete = false): Record<string, any>**
 
 	The `crop` function creates a new object containing the specified keys from the source object, with an option to delete the keys from the source object.
 
@@ -49,7 +49,8 @@ yarn add @crossfox/utils
 
 	**Returns** a new object with the selected keys.
 
-- `setObject(obj: Record<string, any>): (...args: any[]) => Record<string, any>`
+
+- **setObject(obj: Record<string, any>): (...args: any[]) => Record<string, any>**
 
 	The `setObject` function dynamically sets keys and values in an object using a variadic function.
 
@@ -57,7 +58,8 @@ yarn add @crossfox/utils
 
 	Returns a function that accepts key-value pairs to add to the object and returns the updated object.
 
-- `takeItem(arr: Record<string, any>, column: string, def = null): any`
+
+- **takeItem(arr: Record<string, any>, column: string, def = null): any**
 
 	The `takeItem` function is used to retrieve a value from an object and optionally remove it.
 
@@ -69,7 +71,7 @@ yarn add @crossfox/utils
 
 ### Types
 
-- `isString(value: any): boolean`
+- **isString(value: any): boolean**
 
 	The `isString` function checks if a value is a string.
 
@@ -77,7 +79,8 @@ yarn add @crossfox/utils
 
 	Returns `true` if the value is a string, `false` otherwise.
 
-- `isNull(value: any): boolean`
+
+- **isNull(value: any): boolean**
 
 	The `isNull` function checks if a value is null.
 
@@ -85,7 +88,8 @@ yarn add @crossfox/utils
 
 	Returns `true` if the value is null, `false` otherwise.
 
-- `isBoolean(value: any): boolean`
+
+- **isBoolean(value: any): boolean**
 
 	The `isBoolean` function checks if a value is a boolean (true or false).
 
@@ -93,10 +97,53 @@ yarn add @crossfox/utils
 
 	Returns `true` if the value is a boolean, `false` otherwise.
 
-- `checkType(prefix: string, name: string, value: any, type: (() =>
+
+- **checkType(prefix: string, name: string, value: any, type: (() => void) | string): void**
+
+	The `checkType` function validates the type of a value and compares it to the specified type or a custom validation function.
+
+	- `prefix`: The prefix for error messages.
+	- `name`: The name of the value.
+	- `value`: The value to check.
+	- `type`: The type to compare (string or function).
+
+	Throws a `TypeError` exception if the type does not match the expected type.
+
+### Other
+
+- **range(min: number, max: number, step: number | null): number[]**
+
+	The `range` function generates an array of numbers within a specified range.
+
+	- `min`: The lower limit of the range.
+	- `max`: The upper limit of the range.
+	- `step` (default `null`): The step for generating numbers. If not specified, a step of 1 is used.
+
+	Returns an array of numbers within the specified range.
 
 
-### Author
+- **parseJSON(str: string, def = {}): Record<string, any>**
+
+	The `parseJSON` function parses a JSON string and returns a JavaScript object with error handling.
+
+	- `str`: The JSON string to parse.
+	- `def` (default `{}`): The default value to return in case of parsing errors.
+
+	Returns the parsed object or the default value in case of errors.
+
+
+- **maskValue(v: string, mask: string, clearExp = /\s+|[^0-9]+/g): string**
+
+	The `maskValue` function applies a mask to a string value, formatting it according to the provided mask.
+
+	- `value`: The string value.
+	- `mask`: The mask for formatting.
+	- `clearExp` (default `/\s+|[^0-9]+/g`): A regular expression for clearing the string of unnecessary characters.
+
+	Returns the formatted string.
+
+
+## Author
 
 - Oleksii Fursov [@nodePro777](https://t.me/nodePro777)
 
