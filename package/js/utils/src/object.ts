@@ -19,4 +19,7 @@ export const setObject = (obj:Record<string, any>) => (...args:any) => {
 	return {...obj}
 }
 
+export const clone = (obj:any) =>{
+	return structuredClone(obj);
+}
 

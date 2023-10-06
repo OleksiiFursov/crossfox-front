@@ -1,11 +1,7 @@
-import {createElement, memo, useEffect, useRef} from 'react';
-import {AnimatedCounterProps} from './types';
+import {memo, useEffect, useRef} from 'react';
 
 
-const classStatus = ['is-increment', 'is-decrement'];
-const easingFunction = (t: number) => t * t * (3 - 2 * t) * 2;
-
-function AnimatedCounter(props: Partial<AnimatedCounterProps>) {
+function Router(props: Partial<AnimatedCounterProps>) {
 	const {
 		value = 0,
 		duration = 1000,
