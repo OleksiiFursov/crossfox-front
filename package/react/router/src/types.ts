@@ -1,17 +1,12 @@
-import {JSX} from "react";
+import {FC} from "react";
 
-export type AnimatedCounterProps = {
-    value: number;
-    duration: number;
-    rate: number;
-    round: number;
-    tagName: keyof JSX.IntrinsicElements;
-    className?: string;
-    showArrow: boolean;
-		reserveMinusSpace: boolean;
-    suffix: string;
-    prefix: string;
-    reserve: number;
-    align: 'left' | 'right';
-    onFinish: (data: { oldValue: number; value: number; $el: HTMLElement }) => void;
-};
+export interface iRouterConfig {
+    url: string
+		layout: FC,
+		layouts: Record<string, FC>
+		onChange: (prev:string, current:string) => void
+}
+
+export interface iRouter{
+
+}
