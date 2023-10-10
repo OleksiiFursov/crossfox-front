@@ -1,6 +1,7 @@
 import Root from './root.js'
 import AnimatedNumber from '../example/animated-number/index.js'
 import CssStart from '../example/css-start/index.js';
+import ReactRouter from '../example/react-router/index.js';
 import * as React from 'react'
 
 const router = [
@@ -15,6 +16,10 @@ const router = [
 			{
 				path: "css-start",
 				element: <CssStart />,
+			},
+			{
+				path: "component-react-router",
+				element: <ReactRouter />,
 			},
 
 		]

@@ -74,3 +74,7 @@ export const maskValue = (v: string, mask: string, clearExp = /\s+|[^0-9]+/g) =>
 	return buf
 }
 
+export function classNames (...args:any[]) {
+	return args.filter(v => v).join(' ')
+}
+

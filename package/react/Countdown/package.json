@@ -1,16 +1,17 @@
 {
-	"name": "@crossfox/utils",
+	"name": "@crossfox/react-animated-number",
 	"author": "Oleksii Fursov",
-	"description": "The package is a collection of useful utilities and functions designed to streamline and enhance the development process of web applications and other software projects. This package provides developers with a set of tools for more efficient work, reducing code duplication, and improving overall productivity.",
-	"version": "1.1.0",
+	"description": "A lightweight JavaScript component designed for creating smooth and visually appealing animated transitions between different states or values, enhancing user experience in web applications.",
+	"version": "1.0.16",
 	"license": "Apache-2.0",
 	"keywords": [
-		"package",
-		"utils",
-		"helper",
+		"react",
+		"component",
+		"animations",
 		"crossfox",
-		"tiny",
+		"tiny-component",
 		"typescript",
+		"animated-number",
 		"node",
 		"javascript",
 		"front-end"
@@ -25,7 +26,7 @@
 	"homepage": "https://crossfox.online",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/OleksiiFursov/crossfox-front.git#master/package/js/utils"
+		"url": "https://github.com/OleksiiFursov/crossfox-front.git#master/package/react/animated-number"
 	},
 	"bugs": {
 		"url": "https://github.com/OleksiiFursov/crossfox-front/issues",
@@ -71,5 +72,8 @@
 	],
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org/"
+	},
+	"dependencies": {
+		"@crossfox/utils": "^1.0.3"
 	}
 }

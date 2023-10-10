@@ -34,7 +34,7 @@
 	},
 	"scripts": {
 		"build": "rollup -c",
-		"prepublish": "npm version patch && npm publish",
+		"myPub": "npm version patch && npm publish",
 		"start": "rollup -c -w --no-treeshake"
 	},
 	"devDependencies": {

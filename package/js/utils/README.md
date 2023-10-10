@@ -143,6 +143,16 @@ yarn add @crossfox/utils
 	Returns the formatted string.
 
 
+- **classNames**(...args: any[]): string (Added v1.1)
+
+	The `classNames` function takes a variable number of arguments and combines them into a single string, separating them with spaces. It filters the provided arguments, excluding any falsy values (`false`, `null`, `undefined`, `''`).
+
+	- `...args`: Variable-length arguments representing classes.
+
+	This function is useful for dynamically generating a string of classes in various scenarios.
+
+	Returns a string containing the combined classes.
+
 ## Author
 
 - Oleksii Fursov [@nodePro777](https://t.me/nodePro777)
@@ -163,6 +173,7 @@ import {
 	range,
 	parseJSON,
 	maskValue,
+	classNames,
 } from '@crossfox/utils';
 
 // Example of using the takeItem function
@@ -208,4 +219,8 @@ const parsedObject = parseJSON(jsonString);
 
 // Example of using the maskValue function
 const maskedString = maskValue('12345678', 'XXX-XXX-XXX'); // 123-456-789
+
+// Example of using the maskValue function
+const maskedString = classNames(props.className, false && 'active', 'container'); // 'classWithProps container'
+
 ```

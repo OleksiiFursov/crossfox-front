@@ -32,7 +32,7 @@
 	},
 	"scripts": {
 		"build": "sass --watch src/base.scss:dist/base.min.css --style compressed",
-		"prepublish": "npm version patch && npm publish"
+		"myPub": "npm version patch && npm publish"
 	},
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org/"
