@@ -19,12 +19,11 @@ function normalizeRouter(obj: Record<string, any>, prefix = '/', root = []) {
 
 
 		if (isArray || isFunction) {
-
 			if(!isArray){
 				item = [item];
 			}
 			if(key.match(regSlug).length+1 < item.length){
-
+				//
 			}
 
 			if (isArray) {
