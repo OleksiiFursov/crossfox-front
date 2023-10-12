@@ -19,7 +19,7 @@ export const isString = (v: any) => typeof v === 'string';
 export const isArray = Array.isArray;
 export const isBoolean = (v: any) => typeof v === 'boolean' || ['true', 'false', '0', '1'].includes(("" + v).toLowerCase());
 export const isFunction = (v: any) => typeof v === 'function'
-
+export const isSimpleObject = (v: any) => Object.prototype.toString.call(v) === '[object Object]';
 
 export function checkType(prefix: string, name: string, value: any, type: (() => void) | string) {
 	let isError: boolean;

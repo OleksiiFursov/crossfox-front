@@ -143,7 +143,7 @@ yarn add @crossfox/utils
 	Returns the formatted string.
 
 
-- **classNames**(...args: any[]): string (Added v1.1)
+- **classNames**(...args: any[]): string (Added in v1.1)
 
 	The `classNames` function takes a variable number of arguments and combines them into a single string, separating them with spaces. It filters the provided arguments, excluding any falsy values (`false`, `null`, `undefined`, `''`).
 
@@ -152,6 +152,12 @@ yarn add @crossfox/utils
 	This function is useful for dynamically generating a string of classes in various scenarios.
 
 	Returns a string containing the combined classes.
+
+- **isSimpleObject **(...args: any[]): string (Added in v1.1)
+
+	The isSimpleObject function is a utility that checks whether the given object is a plain, simple object.
+
+	Returns `true` if the value is a boolean, `false` otherwise.
 
 ## Author
 
@@ -174,6 +180,7 @@ import {
 	parseJSON,
 	maskValue,
 	classNames,
+	isSimpleObject
 } from '@crossfox/utils';
 
 // Example of using the takeItem function
@@ -220,7 +227,11 @@ const parsedObject = parseJSON(jsonString);
 // Example of using the maskValue function
 const maskedString = maskValue('12345678', 'XXX-XXX-XXX'); // 123-456-789
 
-// Example of using the maskValue function
+// Example of using the classNames function
 const maskedString = classNames(props.className, false && 'active', 'container'); // 'classWithProps container'
 
+// Example of using the isSimpleObject
+if(isSimpleObject({name: 'Alex'})){
+	console.log("This is a plain object.");
+}
 ```

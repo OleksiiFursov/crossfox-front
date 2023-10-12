@@ -5,6 +5,7 @@ import {iRouterConfig} from "./types";
 
 const regSlug = /:([a-zA-Z0-9-]+)/g;
 const regDef = /.+/;
+
 function normalizeRouter(obj: Record<string, any>, prefix = '/', root = []) {
 	let res: Record<string, any> = {};
 	for (let key in obj) {
@@ -22,8 +23,13 @@ function normalizeRouter(obj: Record<string, any>, prefix = '/', root = []) {
 			if(!isArray){
 				item = [item];
 			}
-			if(key.match(regSlug).length+1 < item.length){
-				//
+			const isConfig = item.at(-1).__proto__.toString() === "[object Object]"
+			const countSlug = key.match(regSlug)?.length || 0;
+
+			if(countSlug > item.length-1+root.length+(isConfig ? -1:0)){
+				console.log(1, key);
+			}else{
+				console.log(0, key, countSlug, item.length-1, root.length, (isConfig ? -1:0));
 			}
 
 			if (isArray) {

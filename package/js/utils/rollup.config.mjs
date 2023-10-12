@@ -9,7 +9,7 @@ import svgr from '@svgr/rollup'
 import { terser } from 'rollup-plugin-terser'
 
 export default {
-	input: 'src/index.tsx',
+	input: 'src/index.ts',
 	output: [
 		{
 			file: 'dist/index.js',
@@ -44,7 +44,6 @@ export default {
 		svgr(),
 		resolve(),
 		typescript({
-			rollupCommonJSResolveHack: true,
 			clean: true,
 		}),
 		commonjs({ sourceMap: false }),

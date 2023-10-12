@@ -14,7 +14,7 @@ const a = {
 		'add': Test,
 		'list': Test,
 		':id': {
-			'root': [/0-9/],
+			// '$root': [/0-9/],
 			'view': Test,
 			'edit/:action': [Test, /(section|photo)/]
 		}
