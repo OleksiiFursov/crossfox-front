@@ -2,7 +2,7 @@
 	"name": "@crossfox/react-router",
 	"author": "Oleksii Fursov",
 	"description": "Lightning-fast and highly functional router for React. Effortlessly manage your application's routing with speed and efficiency",
-	",version": "1.0.1",
+	"version": "0.0.2",
 	"license": "Apache-2.0",
 	"keywords": [
 		"react",
@@ -73,5 +73,4 @@
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org/"
 	},
-	"version": "0.0.1"
 }
