@@ -7,32 +7,34 @@ import {isSimpleObject} from "@crossfox/utils";
 const regSlug = /:([a-zA-Z0-9-]+)/g;
 const regDef = /.+/;
 
+const normalizeItem = (key: string, item: any[],  root: any[]): void => {
+	const isConfig = isSimpleObject(item.at(-1));
+	const countSlug = key.match(regSlug)?.length || 0;
+	if (countSlug > item.length - 1 + root.length + (isConfig ? -1 : 0)) {
+		item.push(regDef);
+		console.log(1, key, countSlug, item.length - 1, root.length, (isConfig ? -1 : 0));
+	} else {
+		console.log(0, key, countSlug, item.length - 1, root.length, (isConfig ? -1 : 0));
+	}
+}
 function normalizeRouter(obj: Record<string, any>, prefix = '/', root = []) {
 	let res: Record<string, any> = {};
 	for (let key in obj) {
 		if (key === '$root') continue;
 
 		let item: any = obj[key];
-	//	const slugNames = [];
+		//	const slugNames = [];
 
 
-		const isFunction = typeof item === 'function';
+		const itemFunc = typeof item === 'function';
 		const isArray = Array.isArray(item);
 
 
-		if (isArray || isFunction) {
-			if(!isArray){
+		if (isArray || itemFunc) {
+			if (!isArray) {
 				item = [item];
 			}
-			const isConfig = isSimpleObject(item.at(-1))
-			const countSlug = key.match(regSlug)?.length || 0;
-
-			if(countSlug > item.length-1+root.length+(isConfig ? -1:0)){
-				item.push(regDef);
-				console.log(1,  key, countSlug, item.length-1, root.length, (isConfig ? -1:0));
-			}else{
-				console.log(0, key, countSlug, item.length-1, root.length, (isConfig ? -1:0));
-			}
+			normalizeItem(key, item, root);
 			item.splice(1, 0, ...root)
 
 			// if (isArray) {
@@ -53,6 +55,8 @@ function normalizeRouter(obj: Record<string, any>, prefix = '/', root = []) {
 
 			res[prefix + key] = item;
 		} else {
+			//const rootChildren = item.$root;
+			normalizeItem(key, item.$root, root);
 			Object.assign(res, normalizeRouter(item, prefix + key + '/', item.$root || []));
 		}
 	}
