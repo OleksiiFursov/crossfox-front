@@ -1,5 +1,6 @@
 //import React, {memo, useEffect, useRef} from 'react';
 import {iRouterConfig} from "./types";
+import {isSimpleObject} from "@crossfox/utils";
 
 //const TypeRouter: Function | any[] | object = {};
 
@@ -23,20 +24,22 @@ function normalizeRouter(obj: Record<string, any>, prefix = '/', root = []) {
 			if(!isArray){
 				item = [item];
 			}
-			const isConfig = item.at(-1).__proto__.toString() === "[object Object]"
+			const isConfig = isSimpleObject(item.at(-1))
 			const countSlug = key.match(regSlug)?.length || 0;
 
 			if(countSlug > item.length-1+root.length+(isConfig ? -1:0)){
-				console.log(1, key);
+				item.push(regDef);
+				console.log(1,  key, countSlug, item.length-1, root.length, (isConfig ? -1:0));
 			}else{
 				console.log(0, key, countSlug, item.length-1, root.length, (isConfig ? -1:0));
 			}
+			item.splice(1, 0, ...root)
 
-			if (isArray) {
-				item.splice(1, 0, ...root)
-			} else {
-				item = [item, ...root]
-			}
+			// if (isArray) {
+			// 	item.splice(1, 0, ...root)
+			// } else {
+			// 	item = [item, ...root]
+			// }
 
 
 			//const regExpItem = isArray ? [item.slice(1)] : [];
@@ -67,7 +70,7 @@ export function createRouter(routers: any, config: iRouterConfig = {}) {
 	// 		routeConfig = item.pop();
 	// 	}
 	// }
-	return 1;
+	return '';
 	//const url = config.url || location.pathname;
 //	const layouts = config.layouts || {};
 

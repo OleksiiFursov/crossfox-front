@@ -67,7 +67,7 @@ const d =  {
 }
 
 function ReactRouterPage(){
-	console.log(createRouter(a));
+	createRouter(a);
 	return 1 //<Countdown value={1000} format="hh:mm:ss" />
 }
 
