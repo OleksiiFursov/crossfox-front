@@ -5,7 +5,7 @@ import {isSimpleObject, isArray, isFunction, clone} from "@crossfox/utils";
 const regSlug = /:([a-zA-Z0-9-]+)/g;
 const regDef = /.+/;
 
-const normalizeItem = (key: string, item: any[], root: any[]): void => {
+const normalizeItem = (key: string, item: any[], root: any[]) => {
 	const isConfig = isSimpleObject(item.at(-1));
 	const countSlug = key.match(regSlug)?.length || 0;
 	const itemLen = item.length + (isFunction(item[0]) ? -1 : 0);
@@ -24,17 +24,18 @@ function normalizeRouter(obj: Record<string, any>, prefix = '', root = []) {
 		if (key === '$root') continue;
 		let item: any = obj[key];
 
+		const prefixAll = prefix + key;
 		if (isSimpleObject(item)) {
 			const rootChildren = item.$root || [];
 			normalizeItem(key, rootChildren, root);
-			Object.assign(res, normalizeRouter(item, prefix + key + '/', rootChildren));
+			Object.assign(res, normalizeRouter(item, prefixAll + '/', rootChildren));
 		} else {
 			if (!isArray(item)) {
 				item = [item];
 			}
 			normalizeItem(key, item, root);
 			item.splice(1, 0, ...root)
-			res[prefix + key] = item;
+			res[prefixAll] = item;
 		}
 	}
 	return res;
@@ -45,6 +46,9 @@ export const LayoutError: FC<iRouterLayout> = ({children}) => <div className="pa
 export const LayoutDefault: FC<iRouterLayout> = ({children}) => children
 export const NotFoundPage = () => <h1>Page not found</h1>
 
+export function goTo(url: string, data:Record<string, any>){
+
+}
 export function createRouter(routers: any) {
 	const [url, setUrl] = useState(null);
 	const stateLayout= useRef<string>('default');
@@ -70,7 +74,7 @@ export function createRouter(routers: any) {
 	}
 
 	function Router(props: iRouterConfig) {
-		let {url, layout = 'blank', layouts = {}} = props;
+		let {url, layout = 'default', layouts = {}} = props;
 
 		layouts = {
 			error: LayoutError,
@@ -109,5 +113,5 @@ export function createRouter(routers: any) {
 		return <Layout><Component/></Layout>;
 	}
 
-	return {Router};
+	return Router;
 }
