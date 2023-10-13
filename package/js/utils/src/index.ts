@@ -27,7 +27,7 @@ export function checkType(prefix: string, name: string, value: any, type: (() =>
 		isError = typeof value !== type
 	} else {
 		// @ts-ignore
-		isError = type(value)!;
+		isError = type(value);
 		type = (type as Function).name || 'Custom';
 	}
 

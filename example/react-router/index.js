@@ -1,5 +1,5 @@
 import Countdown from 'package/react/Countdown/src/index.tsx'
-import React from 'react';
+import React from 'react'
 import { createRouter } from 'package/react/router/src/index.tsx'
 
 const Test = () => <div>123</div>
@@ -8,18 +8,18 @@ const a = {
 		'add': Test,
 		'list': Test,
 		':id/view': [Test],
-		':id/edit/:action': [Test, /0-9+/, /(section|photo)/],
+		':id/edit/:action': [Test, /0-9+/, /section|photo/],
 	},
 	user: {
 		'add': Test,
 		'list': Test,
 		':id': {
-			// '$root': [/0-9/],
+			'$root': [/0-9/],
 			'view': Test,
-			'edit/:action': [Test, /(section|photo)/]
-		}
+			'edit/:action': [Test, /section|photo/],
+		},
 
-	}
+	},
 }
 
 const b = {
@@ -35,12 +35,12 @@ const b = {
 		'([0-9]+)': {
 			'root': ['id'],
 			'view': Test,
-			'edit/(section|photo)': [Test, 'action']
-		}
+			'edit/(section|photo)': [Test, 'action'],
+		},
 
-	}
+	},
 }
-const c =  {
+const c = {
 	'/client': Test,
 	'/client/list': Test,
 	'/client/add': Test,
@@ -53,7 +53,7 @@ const c =  {
 	'/user/([0-9]+)/view/': [Test, 'id'],
 }
 
-const d =  {
+const d = {
 	'/client': Test,
 	'/client/list': Test,
 	'/client/add': Test,
@@ -66,8 +66,8 @@ const d =  {
 	'/user/:id/view/': [Test, /0-9+/],
 }
 
-function ReactRouterPage(){
-	createRouter(a);
+function ReactRouterPage () {
+	createRouter(a)
 	return 1 //<Countdown value={1000} format="hh:mm:ss" />
 }
 
