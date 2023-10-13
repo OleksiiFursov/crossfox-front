@@ -1,16 +1,12 @@
-import {ReactNode, ReactElement} from "react";
+import { ReactElement, FC} from "react";
 
 export interface iRouterConfig {
     url?: string
 		layout?: string,
-		layouts?: Record<string, ReactElement>
+		layouts?: Record<string, FC<iRouterLayout>>
 		onChange?: (prev:string, current:string) => void
 }
 
 export interface iRouterLayout{
-	children: ReactNode,
-}
-
-export interface iRouterRefString{
-	current: string
+	children:ReactElement
 }

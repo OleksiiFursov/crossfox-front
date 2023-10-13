@@ -1,5 +1,5 @@
-import React, {useRef, useState, FC} from "react";
-import {iRouterConfig, iRouterLayout, iRouterRefString} from "./types";
+import React, {FC, useRef, useState} from "react";
+import {iRouterConfig, iRouterLayout} from "./types";
 import {isSimpleObject, isArray, isFunction, clone} from "@crossfox/utils";
 
 const regSlug = /:([a-zA-Z0-9-]+)/g;
@@ -41,15 +41,15 @@ function normalizeRouter(obj: Record<string, any>, prefix = '', root = []) {
 }
 
 
-export const LayoutError: React.FC<{ children: React.ReactNode }> = ({ children }) => <div className="page-error">{children}</div>;
-export const LayoutDefault: React.FC<{ children: React.ReactNode }> = ({ children }) => <>{children}</>;
-
-
+export const LayoutError: FC<iRouterLayout> = ({children}) => <div className="page-error">{children}</div>;
+export const LayoutDefault: FC<iRouterLayout> = ({children}) => children
 export const NotFoundPage = () => <h1>Page not found</h1>
 
 export function createRouter(routers: any) {
-	const [stateUrl, setStateUrl] = useState(null);
-	const stateLayout:iRouterRefString = useRef('default');
+	const [url, setUrl] = useState(null);
+	const stateLayout= useRef<string>('default');
+	const stateHistory= useRef<string[]>([]);
+
 	const _routers = normalizeRouter(routers);
 	routers = [[404, NotFoundPage]];
 
@@ -61,7 +61,6 @@ export function createRouter(routers: any) {
 			slugNames.push(slug);
 			let regExp = item.splice(1, 1)[0];
 			if (regExp instanceof RegExp) {
-
 				regExp = (regExp + '').slice(1, -1)
 			}
 			return '(' + regExp + ')';
@@ -69,7 +68,6 @@ export function createRouter(routers: any) {
 		item.splice(1, 0, ...slugNames);
 		routers.push([RegExp(key), ...item]);
 	}
-	console.log(routers);
 
 	function Router(props: iRouterConfig) {
 		let {url, layout = 'blank', layouts = {}} = props;
@@ -102,7 +100,7 @@ export function createRouter(routers: any) {
 				}
 				const Layout = layouts[currentLayout];
 				return (<Layout>
-					<Component  {...params} />
+					<Component {...params} />
 				</Layout>);
 			}
 		}
