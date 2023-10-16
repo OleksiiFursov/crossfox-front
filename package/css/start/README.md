@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/@crossfox%2Fcss-start.svg)](https://www.npmjs.com/package/@crossfox/css-start)
 [![Blazing Fast](https://badgen.now.sh/badge/speed/blazing%20%F0%9F%94%A5/green)](https://unpkg.com/@crossfox/css-start)
-[![changelog](https://img.shields.io/badge/changelog-md-blue.svg?style=flat-square)](CHANGELOG.md)
+[![changelog](https://img.shields.io/badge/changelog-md-blue.svg?style=flat-square)](https://github.com/OleksiiFursov/crossfox-front/blob/master/package/css/start/CHANGELOG.md)
 [![NPM downloads](https://img.shields.io/npm/dm/@crossfox/css-start.svg?style=flat-square)](https://npmjs.org/package/@crossfox/css-start)
 ![license](https://badgen.now.sh/badge/license/Apache-2.0)
 
