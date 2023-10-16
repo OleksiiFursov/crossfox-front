@@ -20,6 +20,6 @@ export const setObject = (obj:Record<string, any>) => (...args:any) => {
 }
 
 export const clone = (obj:any) =>{
-	return structuredClone(obj);
+	return structuredClone ? structuredClone(obj): JSON.parse(JSON.stringify(obj));
 }
 
