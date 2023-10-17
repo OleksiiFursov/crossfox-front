@@ -26,7 +26,7 @@
 	"homepage": "https://crossfox.online",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/OleksiiFursov/crossfox-front.git#master/package/react/react-router"
+		"url": "https://github.com/OleksiiFursov/crossfox-front.git#master/package/react/router"
 	},
 	"bugs": {
 		"url": "https://github.com/OleksiiFursov/crossfox-front/issues",

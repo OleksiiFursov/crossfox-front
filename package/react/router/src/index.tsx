@@ -6,7 +6,7 @@ const regSlug = /:([a-zA-Z0-9-]+)/g;
 const regDef = /[^/]+/;
 const eFunc = (d: any) => d;
 
-const normalizeItem = (key: string, item: any[], root: any[], createConfig=true) => {
+const normalizeItem = (key: string, item: any[], root: any[], createConfig = true) => {
 	const isConfig = isSimpleObject(item.at(-1));
 	const countSlug = key.match(regSlug)?.length || 0;
 	const itemLen = item.length + (isFunction(item[0]) ? -1 : 0);
@@ -54,9 +54,9 @@ function normalize(obj: Record<string, any>, prefix = '', root = []) {
 }
 
 
-export const LayoutError: FC = ({children}) => <div className="page-error">{children}</div>;
-export const LayoutDefault: FC = ({children}) => <>{children}</>
-export const NotFoundPage = () => <h1>Page not found</h1>
+const LayoutError: FC = ({children}) => <div className="page-error">{children}</div>;
+const LayoutDefault: FC = ({children}) => <>{children}</>
+const NotFoundPage = () => <h1>Page not found</h1>
 
 const layoutDef = {
 	error: LayoutError,
@@ -81,8 +81,11 @@ function _goTo(ctx: iRouterContext, url: string, data: Record<string, any>) {
 	ctx.setSUrl(url, data);
 	ctx.onChange(ctx.sUrl, url);
 	history.pushState(null, '', ctx.baseUrl + url);
-	// @ts-ignore
-	ctx.sHistory.current.push([url, data]);
+	const h = ctx.sHistory.current || [];
+	if (h.length > 30) {
+		h.shift();
+	}
+	h.push([url, data]);
 }
 
 
@@ -114,7 +117,7 @@ export const useLayout = () => {
 	return context.sLayout.current;
 }
 
-const JSX = (ctx:iRouterContext, Layout: FC, Component: FC, params: any = {}) => (
+const JSX = (ctx: iRouterContext, Layout: FC, Component: FC, params: any = {}) => (
 	<RouterCtx.Provider value={ctx}>
 		<Layout>
 			<Component {...params} />
@@ -138,7 +141,7 @@ export const Link = (props: iRouterLink) => {
 
 function createRouter(routerData: Record<string, any>) {
 	const _routers = normalize(routerData);
-	const routers:any = [];
+	const routers: any = [];
 
 	for (let key in _routers) {
 		const item = _routers[key];
@@ -150,7 +153,7 @@ function createRouter(routerData: Record<string, any>) {
 			return '(' + toStr(item.splice(1, 1)[0]) + ')';
 		});
 		item.splice(1, 0, ...slugNames);
-		routers.push([RegExp('^'+key+'$'), ...item]);
+		routers.push([RegExp('^' + key + '$'), ...item]);
 	}
 
 	function Router(props: iRouterConfig) {
@@ -177,7 +180,7 @@ function createRouter(routerData: Record<string, any>) {
 			const path = router[0];
 			router = [...router];
 			if (~sUrl.search(path)) {
-				const configRouter:iRouterConfig = router.pop();
+				const configRouter: iRouterConfig = router.pop();
 				const match = sUrl.match(path) || [];
 
 				const params: Record<string, string> = {};
