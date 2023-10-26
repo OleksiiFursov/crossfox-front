@@ -74,6 +74,7 @@
 		"registry": "https://registry.npmjs.org/"
 	},
 	"dependencies": {
-		"@crossfox/utils": "^1.1.1"
+		"@crossfox/utils": "^1.1.1",
+		"reselect": "^4.1.8"
 	}
 }
