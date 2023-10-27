@@ -1,6 +1,6 @@
 const availableMode = ['restart-on-remount', 'daemon', 'once-till-unmount']
 
-export function injectSagaFactory (store) {
+export function injectSagaFactory (store:any) {
 	return function injectSaga (key:string, saga:Function, mode:string, args = {}) {
 
 		if (!availableMode.includes(mode)) {
@@ -43,7 +43,7 @@ export function ejectSagaFactory (store:any) {
 	}
 }
 
-export default function (store) {
+export default function (store:any) {
 	return {
 		injectSaga: injectSagaFactory(store),
 		ejectSaga: ejectSagaFactory(store),
