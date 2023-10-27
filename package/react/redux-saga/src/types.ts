@@ -8,4 +8,5 @@ export interface IConfigureStore{
 	sagas?: Record<string, Function>
 	enableSaga?: boolean,
 	devTools?: boolean
+	saveStore?: boolean|string[]
 }
