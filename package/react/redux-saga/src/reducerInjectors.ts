@@ -1,7 +1,7 @@
 import createReducer from '../reducers'
-
-export function injectReducerFactory (store) {
-  return function injectReducer(key, reducer) {
+import {Store} from 'redux';
+export function injectReducerFactory (store:Store<any, any>) {
+  return function injectReducer(key:string, reducer:Function) {
 
 	  if (Reflect.has(store.injectedReducers, key) && store.injectedReducers[key] === reducer)
       return;

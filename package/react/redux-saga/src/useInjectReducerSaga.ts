@@ -1,6 +1,6 @@
 import { checkType } from "@crossfox/utils"
-import useInjectReducer from './injectReducer'
-import useInjectSaga from './injectSaga'
+import useInjectReducer from './useInjectReducer'
+import useInjectSaga from './useInjectSaga'
 
 function useInject (key:string, reducer:Function, saga:Function) {
 	checkType('useInject', 'key', key, 'string')
