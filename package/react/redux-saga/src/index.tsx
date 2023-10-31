@@ -4,7 +4,7 @@ import {configureStore as configureStoreOrigin, EnhancedStore} from "@reduxjs/to
 import createSagaMiddleware from "redux-saga";
 import {IConfigureStore} from "./types";
 import {combineReducers} from "redux";
-import React, {FC} from "react";
+import React from "react";
 import {Provider} from "react-redux";
 
 export * from './state';
@@ -38,6 +38,7 @@ export function selectContext(name: string, def = {}) {
 let reducerGlobal = {};
 
 export function createReducer(injectedReducers = {}) {
+
     return combineReducers({
         ...reducerGlobal,
         ...injectedReducers,
@@ -49,7 +50,8 @@ export function configureStore(props: IConfigureStore) {
     const {initial = {}, reducers = {}, devTools = true, sagas = {}} = props;
     const sagaMiddleware = createSagaMiddleware(sagas);
 
-    reducerGlobal = reducers;
+	console.log(2);
+    reducerGlobal = reducers || {app: (r={}) => r};
     const store: EnhancedStore = configureStoreOrigin({
         reducer: createReducer(),
         preloadedState: initial,
@@ -70,7 +72,7 @@ export function configureStore(props: IConfigureStore) {
 
 export default function initStore(props: IConfigureStore = {}) {
     const store = configureStore(props || {});
-
+		console.log(661);
     return ({children}: any) => <Provider store={store}>
         {children}
     </Provider>

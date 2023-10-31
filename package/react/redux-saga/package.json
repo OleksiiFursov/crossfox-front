@@ -19,8 +19,8 @@
 	"files": [
 		"dist/**/*"
 	],
-	"main": "dist/index.js",
-	"module": "dist/index.esm.js",
+	"main": "src/index.tsx",
+	"module": "src/index.tsx",
 	"types": "dist/index.d.ts",
 	"type": "module",
 	"homepage": "https://crossfox.online",
