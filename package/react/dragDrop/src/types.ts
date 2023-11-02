@@ -16,9 +16,9 @@ export interface iDragDropElement {
 export interface iSelection {
 	items: HTMLElement[],
 	itemsElement: HTMLElement[],
-	owner: HTMLElement | ParentNode,
-	dropTarget: HTMLElement,
-	dropTargetElement: HTMLElement
+	owner: HTMLElement | ParentNode | null,
+	dropTarget: HTMLElement | null,
+	dropTargetElement: HTMLElement | null
 }
 
 
@@ -27,6 +27,8 @@ export interface iDragDropZone{
 	tagName?: keyof JSX.IntrinsicElements,
 	component: FC
 }
+
+
 //
 // export interface iRouterContext{
 // 	baseUrl: string,
