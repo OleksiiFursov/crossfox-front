@@ -52,6 +52,17 @@ export function range(min: number, max: number, step: number | null) {
 	return res
 }
 
+export function makeSize(bytes:number){
+	const units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];
+	const maxUnits = units.length-1;
+	let unit = 0;
+	do{
+		if(bytes<1000 || unit > maxUnits) break;
+		unit++;
+	}while(bytes/=1024);
+	return (+bytes.toFixed(3)) + ' '+ units[unit];
+}
+
 export function parseJSON(str: string, def = {}) {
 	if (!isString(str)) return def
 	try {
