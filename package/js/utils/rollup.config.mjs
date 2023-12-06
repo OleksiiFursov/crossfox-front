@@ -1,5 +1,5 @@
 import del from 'rollup-plugin-delete'
-import typescript from 'rollup-plugin-typescript2'
+import typescript from '@rollup/plugin-typescript'
 import commonjs from '@rollup/plugin-commonjs'
 import external from 'rollup-plugin-peer-deps-external'
 import postcss from 'rollup-plugin-postcss-modules'
@@ -44,7 +44,9 @@ export default {
 		svgr(),
 		resolve(),
 		typescript({
-			clean: true,
+			tsconfig: './tsconfig.json',
+			declaration: true,
+			declarationDir: 'dist',
 		}),
 		commonjs({ sourceMap: false }),
 		analyze({
