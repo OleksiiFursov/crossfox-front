@@ -14,7 +14,7 @@ export const crop = (obj: Record<string, any>, keys: string[], isDelete = false)
 	return arr
 }
 export const setObject = (obj:Record<string, any>) => (...args:any) => {
-	for (let i = 1; i < args.length; i += 2) {
+	for (let i = 0; i < args.length; i += 2) {
 		obj[args[i]] = args[i + 1];
 	}
 	return {...obj}
