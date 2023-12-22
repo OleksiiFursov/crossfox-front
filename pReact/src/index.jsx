@@ -5,7 +5,7 @@ import { Header } from './components/Header.jsx';
 import { Home } from './pages/Home/index.jsx';
 import { NotFound } from './pages/_404.jsx';
 
-import AnimatedNumber from '../../package/preact/animated-number/dist/index.esm.js'
+import AnimatedNumber from '../../package/preact/router/dist/index.esm.js'
 export function App() {
 
 	return <div>
