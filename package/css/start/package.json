@@ -2,7 +2,7 @@
 	"name": "@crossfox/css-start",
 	"author": "Oleksii Fursov",
 	"description": "A lightweight CSS library designed to address common rendering issues in various web browsers. This package provides a set of styles and normalization rules to help prevent incorrect rendering of web elements in both older and modern web browsers.",
-	"version": "1.0.11",
+	"version": "1.0.12",
 	"license": "Apache-2.0",
 	"keywords": [
 		"сss",
