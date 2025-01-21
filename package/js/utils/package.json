@@ -2,7 +2,7 @@
 	"name": "@crossfox/utils",
 	"author": "Oleksii Fursov",
 	"description": "The package is a collection of useful utilities and functions designed to streamline and enhance the development process of web applications and other software projects. This package provides developers with a set of tools for more efficient work, reducing code duplication, and improving overall productivity.",
-	"version": "1.1.5",
+	"version": "1.1.6",
 	"license": "Apache-2.0",
 	"keywords": [
 		"package",
@@ -41,10 +41,6 @@
 		"@rollup/plugin-node-resolve": "^13.0.0",
 		"@rollup/plugin-typescript": "11.1.5",
 		"@svgr/rollup": "^8.1.0",
-		"@types/react": "^17.0.6",
-		"@types/react-dom": "^17.0.5",
-		"react": "18.2.0",
-		"react-dom": "18.2.0",
 		"rollup": "^2.52.7",
 		"rollup-plugin-analyzer": "^4.0.0",
 		"rollup-plugin-delete": "^2.0.0",
@@ -55,9 +51,6 @@
 		"source-map-loader": "^3.0.0",
 		"tslib": "^2.3.0",
 		"typescript": "^5.2.2"
-	},
-	"peerDependencies": {
-		"react": "^16.8.0 || ^17.0.0 || ^18.0.0"
 	},
 	"targets": {
 		"main": false,
