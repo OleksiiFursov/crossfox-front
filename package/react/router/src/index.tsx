@@ -156,6 +156,10 @@ function createRouter(routerData: Record<string, any>) {
 		routers.push([RegExp('^' + key + '$'), ...item]);
 	}
 
+	window.addEventListener('popstate', () => {
+		goTo(location.pathname.slice(1))
+	});
+
 	function Router(props: iRouterConfig) {
 
 		let {url, layout = 'default', layouts = {}, baseUrl = '/', onChange = eFunc} = props;
